@@ -17,3 +17,32 @@ Incremental DOM의 경우, 가상 DOM을 사용하지 않고 실제 DOM을 탐�
 - [What is Virtual Dom? And Why is it faster?](https://dev.to/karthikraja34/what-is-virtual-dom-and-why-is-it-faster-14p9)
 - [Understanding Angular Ivy: Incremental DOM and Virtual DOM](https://blog.nrwl.io/understanding-angular-ivy-incremental-dom-and-virtual-dom-243be844bf36)
 - [Incremental DOM 101: What is it and why I should care?](https://auth0.com/blog/incremental-dom/)
+
+## Hot Module Replacement
+앵귤러 v11이 공개되면서 HMR이 새 기능으로 추가되었으나 이전 버전에서도 
+[@angularClass/hmr](https://www.npmjs.com/package/@angularclass/hmr) 라이브러리의 도움으로 HMR을 구현할 수 있다.
+
+### 참고
+- [Implementation of HMR(Hot Module Replacement) to Angular Project](https://medium.com/echohub/implementation-of-hmr-hot-module-replacement-to-angular-project-f7bca523bd16)
+
+## ngContent 여러개 사용하기
+`<ng-content>`에서 `select`문을 사용하는 것으로 태그 안에 있는 컴포넌트를 각각 불러올 수 있다.
+
+```html
+<!-- template을 사용하는 어느 html -->
+<template>
+  <componentA first></componentA>
+  <componentB second></componentB>
+</template>
+```
+
+```html
+<!-- template.html -->
+<div>
+  <ng-content select="[first]"></ng-content>
+  <ng-content select="[second]"></ng-content>
+</div>
+```
+
+### 참고
+- [Multiple ng-content - Stack Overflow](https://stackoverflow.com/questions/52638718/multiple-ng-content)
